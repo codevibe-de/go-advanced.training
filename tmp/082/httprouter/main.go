@@ -8,7 +8,11 @@ import (
 	"net/http"
 )
 
-func HelloHandler(wrt http.ResponseWriter, req *http.Request, prms httprouter.Params) {
+func HelloHandler(
+	wrt http.ResponseWriter,
+	req *http.Request,
+	prms httprouter.Params,
+) {
 	name := prms.ByName("name")
 	if name == "" {
 		fmt.Fprintf(wrt, "Hello!\n")
@@ -17,7 +21,11 @@ func HelloHandler(wrt http.ResponseWriter, req *http.Request, prms httprouter.Pa
 	}
 }
 
-func CreateItemHandler(wrt http.ResponseWriter, req *http.Request, prms httprouter.Params) {
+func CreateItemHandler(
+	wrt http.ResponseWriter,
+	req *http.Request,
+	prms httprouter.Params,
+) {
 	var reqData struct {
 		ID   string `json:"id"`
 		Name string `json:"name"`

@@ -1,4 +1,4 @@
-package _100_generics
+package main
 
 import (
 	"bytes"
@@ -13,6 +13,10 @@ func main() {
 	var res []string
 	list.forEach(func(v string) { res = append(res, v) })
 	fmt.Println(res)
+
+	listPtr := &list
+	listPtr = nil
+	listPtr.add("fourth")
 
 	// ---
 	var rw io.ReadWriter = &bytes.Buffer{}
@@ -34,8 +38,12 @@ type List[T any] struct {
 }
 
 func (l *List[T]) add(v T) *List[T] {
-	l.next = &List[T]{value: v}
-	return l.next
+	if l != nil {
+		l.next = &List[T]{value: v}
+		return l.next
+	} else {
+		return nil
+	}
 }
 
 func (l *List[T]) forEach(consumer func(v T)) {

@@ -6,14 +6,16 @@ Write a generic function that takes a slice of any type and returns a slice of t
 
 ## b) Implementing a generic type
 
-Create a generic type that represents a stack. The stack should be able to hold any type of element. Implement the following methods:
+Create a generic type that represents a set of items. A set should be able to hold any type of element.
 
-- `Push` to add an element to the stack.
-- `Pop` to remove and return the last element from the stack.
-- `Peek` to return the last element from the stack without removing it.
-- `Len` to return the number of elements in the stack.
-- `IsEmpty` to return a boolean indicating whether the stack is empty.
-- `String` to return a string representation of the stack.
-- `Iter` to return a `Seq` instance that can be used to iteratore over the stack in LIFO order.
+Implement the following methods:
 
-Feel free to reuse the stack code from the Golang Basics training.
+- `Add` to add an element to the set
+- `Remove` to remove an element from the set
+- `Contains` to check if an element is in the set
+- `Len` to return the number of elements in the set
+- `IsEmpty` to return a boolean indicating whether the set is empty
+- `String` to return a string representation of the set
+- `Iter` to return a `Seq` instance that can be used to iterate over the set
+
+Which existing Golang data structure can we use to implement a set efficiently?

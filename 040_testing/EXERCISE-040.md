@@ -13,7 +13,7 @@ Nutzen Sie die vorhandenen Tests, um die Implementierung zu fixen.
 
 ## b) Stack
 
-Schreiben Sie Tests für Ihre Stack Implementierung.
+Schreiben Sie Tests für die Stack Implementierung im Verzeichnis `040_testing/stack/stack.go`
 
 In den Tests sollten alle Features geprüft werden, d.h. `Push()`, `Pop()` und `Peek()`.
 

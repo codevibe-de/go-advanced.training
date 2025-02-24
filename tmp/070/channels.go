@@ -5,6 +5,12 @@ import (
 	"time"
 )
 
+func main() {
+	//simpleChannel()
+	//bufferedChannel()
+	closeChannel()
+}
+
 func simpleChannel() {
 	ch := make(chan int)
 	// start a goroutine
@@ -32,6 +38,9 @@ func closeChannel() {
 	time.Sleep(time.Second)
 	close(dummyChannel)
 	time.Sleep(time.Second)
+	// Output:
+	// Waiting for input...
+	// 0 false
 }
 
 func readUntilClosed(ch chan int) {
@@ -50,8 +59,4 @@ func readUntilClosedRanged(ch chan int) {
 	for input := range ch {
 		fmt.Println(input) // work with input
 	}
-}
-
-func main() {
-	bufferedChannel()
 }

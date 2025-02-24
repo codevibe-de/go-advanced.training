@@ -2,30 +2,32 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"time"
 )
 
 func main() {
 	chOfInts := make(chan int)
 	chOfStrings := make(chan string)
-	go worker(chOfInts, chOfStrings)
-	chOfStrings <- "hello"
-	chOfInts <- 1
+	go worker(chOfStrings, chOfInts)
+	chOfStrings <- "123"
+	chOfStrings <- "222"
+	_ = <-chOfInts
+	_ = <-chOfInts
 	time.Sleep(time.Second)
 }
 
-func worker(intCh chan int, stringCh chan string) {
+func worker(inCh chan string, outCh chan int) {
+	var n int
 	for {
 		select {
-		case n, ok := <-intCh:
+		case s, ok := <-inCh:
 			if ok {
-				fmt.Println("Got an int: ", n)
+				fmt.Println("Received ", s)
+				n, _ = strconv.Atoi(s)
 			}
-		case s := <-stringCh:
-			fmt.Println("Got a string: ", s)
-		default:
-			fmt.Println("Got nothing")
-			// do something useful here
+		case outCh <- n:
+			fmt.Println("Wrote ", n)
 		}
 	}
 }

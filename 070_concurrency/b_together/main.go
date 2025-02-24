@@ -14,9 +14,6 @@ func startUp(id int) {
 }
 
 func main() {
-	// seed random number generator
-	rand.Seed(time.Now().UnixNano())
-
 	// TODO
 
 	// wait a second at the very end of main() to give goroutine enough time to print

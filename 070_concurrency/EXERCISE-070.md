@@ -8,10 +8,13 @@ Dieser Wert soll in der `main()` Funktion ausgelesen und ausgegeben werden.
 
 ## b) Gemeinsamer Start
 
-Lassen Sie drei Goroutinen starten, die eine zufällige Anzahl von 1 - 10 Sekunden brauchen, bis diese einsatzbereit
-sind. Dazu können Sie die fertige Funktion `startup()` nutzen.
+Bei dieser Übung geht es darum, dass wir drei Goroutinen starten, die eine unbekannte Dauer brauchen, bis sie
+einsatzbereit sind. Sobald wir uns sicher sind, dass alle drei bereit sind, sollen sie gleichzeitig etwas tun.
 
-Sobald jede Goroutine bereit ist, soll sie auf ein gemeinsames Startsignal (mittels Channel) warten und dann
+Hierfür starten Sie drei Goroutinen, die anfangs jeweils die vorgegebene Funktion `startup()` aufrufen,
+um das unterschiedlich lange initialisieren (bereitmachen) zu simulieren.
+
+Dann: Sobald jede Goroutine bereit ist, soll sie auf ein gemeinsames Startsignal (mittels Channel) warten und dann
 die aktuelle Zeit ausgeben.
 
 Wie wissen wir, wann jede Goroutine bereit ist? Mögliche Optionen, von einfach nach kompliziert:

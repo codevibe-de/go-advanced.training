@@ -23,9 +23,6 @@ func runner(id int, ch chan bool, wg *sync.WaitGroup) {
 }
 
 func main() {
-	// seed random number generator (deprecated as of go 1.20)
-	rand.Seed(time.Now().UnixNano())
-
 	signalCh := make(chan bool)
 	wg := new(sync.WaitGroup)
 	for n := 0; n < 3; n++ {

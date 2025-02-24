@@ -13,12 +13,12 @@ func main() {
 	mapOutCh := mapper(filterOutCh)
 	result := collector(mapOutCh)
 
-	time.Sleep(time.Second)
+	time.Sleep(time.Second * 5)
 	doneCh <- struct{}{}
-	fmt.Println(result)
+	fmt.Println(*result)
 }
 
-func gen(done chan struct{}) chan int {
+func generator(done chan struct{}) chan int {
 	ch := make(chan int)
 	go func() {
 		fmt.Println("Generator stage starting")
@@ -26,10 +26,11 @@ func gen(done chan struct{}) chan int {
 		for {
 			select {
 			case ch <- i:
-				time.Sleep(100 * time.Millisecond)
+				time.Sleep(400 * time.Millisecond)
+				fmt.Print(".")
 				i++
 			case <-done:
-				fmt.Println("Generator stage stopping")
+				fmt.Println("\nGenerator stage stopping")
 				close(ch)
 				return
 			}
@@ -66,8 +67,8 @@ func mapper(inCh chan int) chan int {
 	return outCh
 }
 
-func collector(inCh chan int) []int {
-	res := make([]int, 0, 10)
+func collector(inCh chan int) *[]int {
+	res := make([]int, 0, 3)
 	go func() {
 		fmt.Println("Collector stage starting")
 		for n := range inCh {
@@ -75,5 +76,5 @@ func collector(inCh chan int) []int {
 		}
 		fmt.Println("Collector stage stopping")
 	}()
-	return res
+	return &res
 }

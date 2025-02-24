@@ -1,0 +1,6 @@
+services:
+  app:
+    build: .
+    image: registry.gitlab.com/codevibe-de/golang-trainings/125-deployment:${VERSION}
+    ports:
+      - "8081:80"

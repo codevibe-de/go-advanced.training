@@ -2,11 +2,12 @@
 
 ## a) Implementing a generic function
 
-Write a generic function that takes a slice of any type and returns a slice of the same type, but with all elements reversed.
+Write a generic function that takes a slice of any type and returns a slice of the same type,
+but with all elements reversed.
 
 ## b) Implementing a generic type
 
-Create a generic type that represents a set of items. A set should be able to hold any type of element.
+Create a generic type that represents a **set of items**. A set should be able to hold any type of element.
 
 Implement the following methods:
 
@@ -19,3 +20,4 @@ Implement the following methods:
 - `Iter` to return a `Seq` instance that can be used to iterate over the set
 
 Which existing Golang data structure can we use to implement a set efficiently?
+Which constraint do we need to enforce on the generic type?

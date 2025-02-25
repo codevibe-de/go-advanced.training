@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"golang.org/x/exp/slices"
 	"log"
-	"os"
 	"time"
 )
 
@@ -93,7 +92,7 @@ var (
 		5,
 	}
 	pizzaSalamiSpecial = &Pizza{
-		"Salami Speciale",
+		"Salame e Cipolle",
 		[]*Ingredient{dough2, tomatoSauce2, gratedCheese2, salami2, onions2},
 		6,
 	}
@@ -102,7 +101,7 @@ var (
 var oven = Oven{8, false}
 
 func main() {
-	// we want to measure time until both pizza are done
+	// we want to measure time until both pizzas are done
 	startTime := time.Now()
 
 	// launch workers
@@ -110,7 +109,7 @@ func main() {
 	pizzaOrderCh, pizzaDeliverCh := startPizzeria(&oven, 3)
 
 	// bake them
-	// ps of course we could use a for loop here if we had more pizzas
+	// ps of course we could make use of a for-loop here if we had more pizzas
 	pizzaOrderCh <- pizzaMargarita
 	pizzaOrderCh <- pizzaSalamiSpecial
 	close(pizzaOrderCh)
@@ -141,7 +140,7 @@ func startPizzeria(oven *Oven, workerCount int) (chan *Pizza, chan *Pizza) {
 	// launch supervisor checking for prepared ingredients to trigger pizza baking
 	go supervisor(pizzaOrderCh, pizzaDeliverCh, prepInCh, prepOutCh, pizzaInCh, pizzaOutCh, oven)
 
-	// get oven going
+	// get the oven going
 	prepInCh <- oven
 
 	// done
@@ -239,12 +238,5 @@ func supervisor(pizzaOrderCh <-chan *Pizza, pizzaDeliverChan chan<- *Pizza,
 			close(pizzaDeliverChan)
 			return
 		}
-	}
-}
-
-func handleError(context string, err error) {
-	if err != nil {
-		log.Printf("Got error %s: %s", context, err.Error())
-		os.Exit(2)
 	}
 }

@@ -38,4 +38,4 @@ Der Supervisor arbeitet mindestens so lange bis alle Pizzen ausgeliefert wurden.
 
 - Einführung eines Structs `Task`, welches die vom Worker zu erledigende Aufgabe bzw. Datenobjekt enthält, d.h. 
 entweder ein Ingredient, den Ofen oder eine zu backende Pizza
-- Einführung eines "Status" in einer Pizza (Konstanten via iota) und Entfernung der Arrays im SV
+- Einführung eines "Status" in einer Pizza (Konstanten via iota) und Entfernung der Arrays im Supervisor

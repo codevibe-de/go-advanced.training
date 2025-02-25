@@ -1,4 +1,4 @@
-package _100_generics
+package main
 
 func reverse[T any](s []T) []T {
 	n := len(s)

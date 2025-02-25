@@ -1,4 +1,4 @@
-package _100_generics
+package main
 
 import (
 	"reflect"

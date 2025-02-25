@@ -351,3 +351,4 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 /tmp/082/gorm/test.db
+/tmp/082/gin/tmp/main

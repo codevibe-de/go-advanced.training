@@ -5,7 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"google.golang.org/grpc"
-	"local/132-grpc/pizza/pb"
+	"local/_132_grpc/pizza/pb"
 	"log"
 	"net"
 )

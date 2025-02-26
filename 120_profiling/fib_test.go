@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"local/_120_profiling/fib_fast"
 	"local/_120_profiling/fib_memwaste"
 	"local/_120_profiling/fib_recursive"
@@ -36,6 +37,7 @@ func TestRecursive(t *testing.T) {
 }
 
 func BenchmarkRecursive(b *testing.B) {
+	fmt.Println("BenchmarkRecursive")
 	performTest(b, b.N, fib_recursive.Get)
 }
 

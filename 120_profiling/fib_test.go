@@ -8,19 +8,6 @@ import (
 	"testing"
 )
 
-// table is a test table containing the input and expected output for the Fibonacci function.
-// it can be used in one of the exercises and is initially not used.
-var table = []struct {
-	n    int
-	want int
-}{
-	{n: 1, want: 1},
-	{n: 5, want: 5},
-	{n: 10, want: 55},
-	{n: 20, want: 6_765},
-	{n: 50, want: 12_586_269_025},
-}
-
 // performTest is a helper function to test the performance of the Fibonacci function.
 // It checks if the result for the 30th Fibonacci number is correct (repeatedly for "count" times).
 // The actual Fibonacci function to call is passed as the fib parameter.

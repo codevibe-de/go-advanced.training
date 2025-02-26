@@ -48,10 +48,6 @@ Also, you can use your IDE to run the benchmark and investigate it.
 
 Feel free to run other benchmarks then (e.g. `Fast` or `Memwaste`).
 
-## Use tabular benchmarks
 
-Edit the `performTest` function make use of the tabular testing data provided above.
-
-## Live profiling
 
 

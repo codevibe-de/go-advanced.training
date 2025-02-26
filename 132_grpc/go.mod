@@ -1,6 +1,6 @@
-module local/132-grpc
+module local/_132_grpc
 
-go 1.24
+go 1.24.0
 
 require (
 	golang.org/x/net v0.32.0 // indirect

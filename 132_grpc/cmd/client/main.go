@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
-	"local/132-grpc/pizza/pb"
+	"local/_132_grpc/pizza/pb"
 	"log"
 	"time"
 )

@@ -38,7 +38,7 @@ Ihre Anwendung wird endlos laufen, Sie können diese u.a. mit CTRL+C abbrechen.
 
 ## d) Pizza
 
-Wir backen Pizzen!
+Wir backen Pizzen! 🍕🍕🍕
 
 Schauen Sie sich den Source-Code in `070_concurrency/d_pizza/main.go` an. Dort werden Pizzen und ihre Zutaten
 definiert. Es gibt auch einen Ofen. Sowohl die Zutaten als auch der Ofen müssen präpariert werden, dies benötigt
@@ -51,8 +51,10 @@ Aber in Ihrer Pizzeria haben wir drei tüchtige Helfer, nicht nur einen.
 Reduzieren Sie die Gesamtzeit so weit wie möglich, indem sie mit insgesamt 3 laufenden Prozessen arbeiten. Die
 bestehenden Datentypen können erweitert werden, falls Sie noch Methoden oder Interfaces einbauen wollen.
 
-ACHTUNG, diese Übung ist wesentlich komplizierter als anfangs gedacht. Im `solution` Branch finden Sie eine mögliche
-Lösung sowie eine Markdown-Datei mit Konzeptideen.
+ACHTUNG, diese Übung ist wesentlich komplizierter als anfangs gedacht. Erste Hilfe finden Sie in der
+Konzeptdatei [pizza-solution-concept.md](d_pizza/pizza-solution-concept.md).
+
+Im `solution` Branch finden Sie eine mögliche Lösung.
 
 ITERATIVES VORGEHEN: Sie können die Übung in steigender Komplexität angehen, z.B.:
 
@@ -62,8 +64,4 @@ ITERATIVES VORGEHEN: Sie können die Übung in steigender Komplexität angehen, 
 - dann das Backen der Pizzen auch über Goroutinen laufen lassen (nach Vorbereitung **aller** Zutaten)
 - dann eine Pizza per Goroutine backen lassen, sobald nur deren Zutaten fertig sind
 
-Starten Sie eine andere Goroutine, die alle 1100 ms einen `string` in einen anderen Kanal schreibt.
-
-In der `main()` Methode nutzen Sie ein `select`, um entweder auf die eine oder auf die andere Nachricht zu reagieren.
-
-Ihre Anwendung wird endlos laufen, Sie können diese u.a. mit CTRL+C abbrechen.
+Diese Übung soll Spaß machen! Wenn es zu kompliziert wird, dann bitte die Zielsetzung vereinfachen! 🚀

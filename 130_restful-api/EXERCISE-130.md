@@ -26,6 +26,8 @@ Things to skip / do-not-dos:
 - API documentation
 - endpoint testing
 
+Note: You might want to use "Air" to start and relaunch your server while typing...
+
 ## b) Migration to a web framework
 
 Now migrate your code to one of the popular web frameworks like Gin, Fibre or Echo.

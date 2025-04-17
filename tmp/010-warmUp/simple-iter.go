@@ -18,10 +18,11 @@ func main() {
 	iterator := All(slc)
 
 	// direkte nutzung:
-	iterator(func(i int, v string) bool {
+	callback := func(i int, v string) bool {
 		println(i, v)
 		return true
-	})
+	}
+	iterator(callback)
 
 	// alternativ:
 	for i, v := range iterator {

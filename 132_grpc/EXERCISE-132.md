@@ -1,5 +1,12 @@
 # Exercise for gRPC
 
+## Setup
+
+Make sure you have the `protoc` compiler installed. 
+
+Also, make sure you have the two plugins installed, as described here:
+https://grpc.io/docs/languages/go/
+
 ## Start
 
 This directory contains a schema definition file `pizza.proto`.
@@ -25,6 +32,14 @@ go run cmd/client/main.go
 ## Calling from third-party clients
 
 Use a third-party client like `grpcurl`, Insomnia or Yaak to call the server.
+
+## Implement streaming of products
+
+Read the documentation on how to implement streaming in gRPC.
+
+https://grpc.io/docs/languages/go/basics/#server-side-streaming-rpc
+
+Use that knowledge to provide a method body for `func (s *server) ListProducts()`.
 
 ## Creating a product
 
